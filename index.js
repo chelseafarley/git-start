@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 const readline = require("readline");
 const { exec } = require("child_process");
 const fs = require('fs');
@@ -40,7 +43,7 @@ rl.question("Repo Name?", function(repoName) {
           let gitPersonalAccessToken = stdout.replaceAll(/\s/g,'');
           rl.question("Description?", function(description) {
             rl.question("Readme? Y/n Default: Y", function(readme) {
-              rl.question("Public? Y/n Default: Y", function(public) {
+              rl.question("Public? Y/n Default: Y", function(privacy) {
                 rl.question("Choose a license (optional). List here: https://api.github.com/licenses", function(license) {
                   rl.question("Choose tech comma delimited (optional). List here: https://www.toptal.com/developers/gitignore/api/list", function(tech) {
                     // Don't want any spaced in the tech list
@@ -48,14 +51,14 @@ rl.question("Repo Name?", function(repoName) {
       
                     // Default the following to Y
                     let autoInit = readme.toLowerCase() === "n" ? false : true;
-                    let private = public.toLowerCase() === "n" ? true : false;
+                    let privacyBool = privacy.toLowerCase() === "n" ? true : false;
       
                     let repoRequest = {
                       name: repoName,
                       description: description,
                       auto_init: autoInit,
                       license_template: license,
-                      private: private
+                      private: privacyBool
                     };
 
                     exec(`curl -u '${gitUsername}:${gitPersonalAccessToken}' https://api.github.com/user/repos -d  '${JSON.stringify(repoRequest)}'`, (error, stdout, stderr) => {

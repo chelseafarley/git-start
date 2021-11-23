@@ -1,6 +1,6 @@
 {
   "name": "@chelseas/git-start",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Quick creation of git repositories for mac",
   "main": "./index.js",
   "bin": {

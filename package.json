@@ -1,0 +1,26 @@
+{
+  "name": "git-start",
+  "version": "1.0.0",
+  "description": "Quick creation of git repositories for mac",
+  "main": "index.js",
+  "scripts": {
+    "git-start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chelseafarley/git-start.git"
+  },
+  "keywords": [
+    "git",
+    "github",
+    "create",
+    "repository",
+    "gitignore"
+  ],
+  "author": "Chelsea Farley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chelseafarley/git-start/issues"
+  },
+  "homepage": "https://github.com/chelseafarley/git-start#readme"
+}

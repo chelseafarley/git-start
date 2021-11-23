@@ -2,6 +2,8 @@
 For MacOS.
 This npm package creates a command that allows users to create git repos quickly with .gitignore for desired tech stack.
 
+Demo on Youtube: https://www.youtube.com/watch?v=9OhArl-qFCM
+
 ## Getting Started
 1. Install the npm package
 
